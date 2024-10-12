@@ -1,5 +1,5 @@
 import { build } from 'esbuild'
-import { writeFileSync } from 'node:fs'
+import { copyFileSync, writeFileSync } from 'node:fs'
 import { meta } from '../app/biz/meta/index.js'
 import packagejson from '../package.json' with { type: 'json' }
 
@@ -20,6 +20,7 @@ async function main() {
     target: ['node20'],
   })
 
+  copyFileSync('./readme.md', dir + 'readme.md')
   generate_packagejson()
 }
 main()
