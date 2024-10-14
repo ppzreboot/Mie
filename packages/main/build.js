@@ -1,7 +1,8 @@
 import { build } from 'esbuild'
 import { copyFileSync, writeFileSync } from 'node:fs'
 import { meta } from './meta/index.js'
-import packagejson from '../../package.json' with { type: 'json' }
+
+import { declaration_list } from './registers/declaration.js'
 
 const dir = '../../dist/'
 
@@ -28,10 +29,21 @@ main()
 function generate_packagejson() {
   writeFileSync(dir + 'package.json',
     JSON.stringify({
-      name: packagejson.name,
-      version: packagejson.version,
-
-      ...meta,
+      contributes: {
+        views: {
+          explorer: declaration_list
+            .filter(
+              item => item.location === 'explorer'
+            )
+            .map(
+              item => ({
+                id: item.id,
+                name: item.name,
+              })
+            )
+        }
+      },
+    ...meta,
     }, null, 2)
   )
 }
