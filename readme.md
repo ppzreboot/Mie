@@ -9,9 +9,14 @@ VS Code 里触手可及的小工具：
 ### 需求、建议、意见、批评
 
 ### 贡献代码
+#### Apps
+``` bash
+npm run apps --workspace=apps
+```
+
 #### 打包
 ``` bash
-npm run build --workspace=main
+npm run build --workspace=apps --workspace=main
 ```
 
 #### 相关链接
