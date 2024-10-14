@@ -1,14 +1,14 @@
 {
   "name": "mie",
   "version": "0.0.0",
-  "type": "module",
-  "scripts": {
-    "build": "node build/build.js"
-  },
+  "description": "vscode 小工具",
   "devDependencies": {
     "esbuild": "^0.24.0"
   },
   "dependencies": {
     "@types/vscode": "^1.94.0"
-  }
+  },
+  "workspaces": [
+    "packages/*"
+  ]
 }

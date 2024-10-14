@@ -1,0 +1,10 @@
+{
+  "type": "module",
+  "devDependencies": {
+    "esbuild": "^0.24.0",
+    "@types/vscode": "^1.94.0"
+  },
+  "scripts": {
+    "build": "node build.js"
+  }
+}
