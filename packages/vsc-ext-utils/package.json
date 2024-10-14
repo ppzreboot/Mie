@@ -1,5 +1,6 @@
 {
   "devDependencies": {},
   "scripts": {
+    "@types/vscode": "^1.94.0"
   }
 }
