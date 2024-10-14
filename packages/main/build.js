@@ -5,6 +5,28 @@ import { meta } from './meta/index.js'
 import { declaration_list } from './registers/declaration.js'
 
 const dir = '../../dist/'
+const contributes = {
+  views: {
+    explorer: declaration_list
+      .filter(
+        item => item.type === 'treeview' && item.location === 'explorer'
+      )
+      .map(
+        item => ({
+          id: item.id,
+          name: item.name,
+        })
+      )
+  },
+  commands: declaration_list
+    .filter(item => item.type === 'command')
+    .map(item => ({
+      command: item.command,
+      title: item.title,
+      category: item.category,
+    }))
+  ,
+}
 
 async function main() {
   await build({
@@ -29,21 +51,8 @@ main()
 function generate_packagejson() {
   writeFileSync(dir + 'package.json',
     JSON.stringify({
-      contributes: {
-        views: {
-          explorer: declaration_list
-            .filter(
-              item => item.location === 'explorer'
-            )
-            .map(
-              item => ({
-                id: item.id,
-                name: item.name,
-              })
-            )
-        }
-      },
-    ...meta,
+      contributes,
+      ...meta,
     }, null, 2)
   )
 }
