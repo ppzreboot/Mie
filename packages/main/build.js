@@ -2,7 +2,7 @@ import { build } from 'esbuild'
 import { copyFileSync, writeFileSync } from 'node:fs'
 import { meta } from './meta/index.js'
 
-import { declaration_list } from './registers/declaration.js'
+import { declaration_list } from './contributes/declaration.js'
 
 const dir = '../../dist/'
 const contributes = {

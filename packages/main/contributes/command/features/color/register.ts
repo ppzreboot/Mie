@@ -3,7 +3,7 @@ import { declaration } from './declare'
 
 export
 function register() {
-  commands.registerCommand(declaration.command, () => {
-    window.showInformationMessage('hahaha')
+  return commands.registerCommand(declaration.command, () => {
+    window.showInformationMessage('hahah')
   })
 }

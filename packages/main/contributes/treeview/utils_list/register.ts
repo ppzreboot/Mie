@@ -39,5 +39,5 @@ class DataProvider implements TreeDataProvider<Item> {
 export
 function register(){
   const provider = new DataProvider()
-  window.registerTreeDataProvider(treeview_id, provider)
+  return window.registerTreeDataProvider(treeview_id, provider)
 }

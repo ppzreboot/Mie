@@ -1,11 +1,14 @@
-import { ExtensionContext, window } from 'vscode'
-import { register_list } from './registers/register'
+import { ExtensionContext } from 'vscode'
+import { register_list } from './contributes/register'
 
 export
 function activate(ctx: ExtensionContext) {
   console.log('registering contributes')
   register_list.map(
-    register => register()
+    register =>
+      ctx.subscriptions.push(
+        register()
+      )
   )
   console.log('registered')
 
