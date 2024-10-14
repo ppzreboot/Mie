@@ -1,13 +1,13 @@
 import { build } from 'esbuild'
 import { copyFileSync, writeFileSync } from 'node:fs'
-import { meta } from './app/biz/meta/index.js'
+import { meta } from './meta/index.js'
 import packagejson from '../../package.json' with { type: 'json' }
 
 const dir = '../../dist/'
 
 async function main() {
   await build({
-    entryPoints: ['app/biz/main.ts'],
+    entryPoints: ['main.ts'],
     outfile: dir + 'main.js',
 
     bundle: true,
