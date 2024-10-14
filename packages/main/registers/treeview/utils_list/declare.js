@@ -8,6 +8,7 @@ const treeview_name = 'Mie'
 /** @type {import('vsc-ext-utils').TreeView_Declaration} */
 export
 const declaration = {
+  type: 'treeview',
   id: treeview_id,
   name: treeview_name,
   location: 'explorer',

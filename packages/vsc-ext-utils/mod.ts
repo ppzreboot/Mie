@@ -1,1 +1,1 @@
-export * from './register/mod.ts'
+export * from './contribute/mod.ts'
