@@ -14,7 +14,7 @@ const utils_entry: Item[] = [
     icon: 'symbol-color',
   },
   {
-    label: '时间戳/时区',
+    label: '时间/时区',
     key: 'date',
     icon: 'timeline-open',
   },

@@ -1,9 +1,10 @@
-import { commands, window } from 'vscode'
+import { commands, ExtensionContext } from 'vscode'
 import { declaration } from './declare'
+import { Mie_app } from '../../../../webview'
 
 export
-function register() {
+function register(ctx: ExtensionContext) {
   return commands.registerCommand(declaration.command, () => {
-    window.showInformationMessage('hahah')
+    new Mie_app('color', 'Color Format Converter', ctx)
   })
 }

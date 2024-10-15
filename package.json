@@ -1,7 +1,8 @@
 {
   "devDependencies": {
-    "esbuild": "^0.24.0",
-    "@types/vscode": "^1.94.0"
+    "@types/node": "^22.7.5",
+    "@types/vscode": "^1.94.0",
+    "esbuild": "^0.24.0"
   },
   "workspaces": [
     "packages/*"

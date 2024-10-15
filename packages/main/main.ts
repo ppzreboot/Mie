@@ -7,7 +7,7 @@ function activate(ctx: ExtensionContext) {
   register_list.map(
     register =>
       ctx.subscriptions.push(
-        register()
+        register(ctx)
       )
   )
   console.log('registered')

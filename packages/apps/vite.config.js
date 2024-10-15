@@ -5,8 +5,10 @@ export default defineConfig({
   build: {
     rollupOptions: {
       input: {
-        main: resolve(__dirname, 'index.html'),
-        color: resolve(__dirname, 'apps/color/index.html'),
+        color: resolve(__dirname, 'apps/color/index.ts'),
+      },
+      output: {
+        entryFileNames: '[name].js',
       },
     },
   },
