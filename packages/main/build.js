@@ -4,6 +4,8 @@ import { meta } from './meta/index.js'
 
 import { declaration_list } from './contributes/declaration.js'
 
+const is_dev = detect_mode() === 'dev'
+
 const dir = '../../dist/'
 const contributes = {
   views: {
@@ -42,8 +44,8 @@ async function main() {
       'vscode',
     ],
 
-    sourcemap: true,
-    // minify: true,
+    sourcemap: is_dev,
+    minify: !is_dev,
     format: 'cjs',
     target: ['node20'],
   })
@@ -65,4 +67,15 @@ function generate_packagejson() {
       ...meta,
     }, null, 2)
   )
+}
+
+function detect_mode() {
+  switch (process.argv[2]) {
+    case 'dev':
+      return 'dev'
+    case 'pro':
+      return 'pro'
+    default:
+      throw Error('mode must be explicitly set')
+  }
 }

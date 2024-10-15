@@ -2,7 +2,8 @@
   "type": "module",
   "scripts": {
     "apps": "vite",
-    "build": "tsc && vite build"
+    "build-dev": "tsc && vite build",
+    "build-pro": "tsc && vite build"
   },
   "devDependencies": {
     "typescript": "^5.5.3",

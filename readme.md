@@ -15,8 +15,18 @@ npm run apps --workspace=apps
 ```
 
 #### 打包
+> 为彻底避免“热更新”带来的疑惑（也就是问题：“究竟哪些操作支持热更新？而哪些不支持”），
+> 此插件的打包过程应避免使用 watch mode。
+
+##### 开发模式
 ``` bash
-npm run build --workspace=apps --workspace=main
+npm run build-dev --workspace=apps --workspace=main
+npm run package
+```
+
+##### 生产模式
+``` bash
+npm run build-pro --workspace=apps --workspace=main
 npm run package
 ```
 
