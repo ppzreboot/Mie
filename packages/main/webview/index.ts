@@ -15,6 +15,7 @@ class Mie_app {
       enableScripts: true, // !!!
     })
     this.panel.webview.html = this.render()
+    // this.panel.iconPath = 
   }
 
   private join_url(path: string = '') {
