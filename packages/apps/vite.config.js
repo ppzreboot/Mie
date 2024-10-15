@@ -6,6 +6,7 @@ export default defineConfig({
     rollupOptions: {
       input: {
         color: resolve(__dirname, 'apps/color/index.ts'),
+        time: resolve(__dirname, 'apps/time/index.ts'),
       },
       output: {
         entryFileNames: '[name].js',
