@@ -39,7 +39,7 @@ class Mie_app {
       </head>
       <body>
         <div id="root"></div>
-        <script src="${this.local_resource(this.key + '.js')}"></script>
+        <script type="module" src="${this.local_resource(this.key + '.js')}"></script>
       </body>
       </html>
     `

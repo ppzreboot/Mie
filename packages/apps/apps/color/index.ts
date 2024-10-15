@@ -6,7 +6,7 @@ app({
   view: () =>
     h('div', {}, [
       h('main', {}, [
-        text('hello, hyperapp'),
+        text('Color Format Converter'),
       ])
     ])
 })
