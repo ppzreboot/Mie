@@ -17,6 +17,7 @@ npm run apps --workspace=apps
 #### 打包
 ``` bash
 npm run build --workspace=apps --workspace=main
+npm run package
 ```
 
 #### 相关链接

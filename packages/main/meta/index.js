@@ -8,6 +8,10 @@ const meta = {
   name: 'mie', // vscode ext 的名字必须小写
   version: '0.0.0',
   description: 'vscode 小工具',
+  repository: {
+    type: 'git',
+    url: 'git+https://github.com/ppzreboot/mie.git',
+  },
   engines: {
     vscode: engines,
   },

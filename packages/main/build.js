@@ -1,5 +1,5 @@
 import { build } from 'esbuild'
-import { copyFileSync, writeFileSync, cpSync } from 'node:fs'
+import { copyFileSync, writeFileSync, cpSync, rmSync } from 'node:fs'
 import { meta } from './meta/index.js'
 
 import { declaration_list } from './contributes/declaration.js'
@@ -29,6 +29,10 @@ const contributes = {
 }
 
 async function main() {
+  rmSync(dir, {
+    recursive: true,
+  })
+
   await build({
     entryPoints: ['main.ts'],
     outfile: dir + 'main.js',
@@ -39,11 +43,13 @@ async function main() {
     ],
 
     sourcemap: true,
+    // minify: true,
     format: 'cjs',
     target: ['node20'],
   })
 
   copyFileSync('../../readme.md', dir + 'readme.md')
+  copyFileSync('../../LICENSE', dir + 'LICENSE')
   generate_packagejson()
 
   cpSync('../apps/dist', dir + 'webview', {
